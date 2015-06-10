@@ -2,8 +2,17 @@
 <div style="position: absolute; left: 0; top: 0; width: {{model.width}}px; height: {{model.height}}px; border: thin solid gray; background-image: url('{{model.imageURL}}'); background-size: cover;">
         <label>{{model.label}}</label>
         {{#each place in model.places}}
-        <div style="position: absolute; left: {{place.x}}%; top: {{place.y}}%;">
-            {{#link-to 'place' place}}{{place.label}}{{/link-to}}
+        <div style="position: absolute; left: {{place.x}}px; top: {{place.y}}px;">
+            {{#link-to 'place' place}}
+            <svg height="30" width="50" viewBox="0 0 100 50">
+                <ellipse cx="50" cy="25" rx="50" ry="25"
+                                                   style="fill:#ff5252;stroke:purple;stroke-width:2" />
+            </svg>
+            <br/>
+            <span style="text-align: center; background: #fff; padding: .25em;">
+                {{place.label}}
+            </span>
+            {{/link-to}}
         </div>
         {{/each}}
     </div>

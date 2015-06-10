@@ -13,15 +13,15 @@ PlaceModel.reopenClass({
         {
             id: 1,
             label: 'Place 1',
-            x: 10,
-            y: 10,
+            x: 100,
+            y: 200,
             type: 'place-basic',
         },
         {
             id: 2,
             label: 'Place 2',
-            x: 20,
-            y: 20,
+            x: 200,
+            y: 200,
             type: 'place-dummy',
         }
     ]
