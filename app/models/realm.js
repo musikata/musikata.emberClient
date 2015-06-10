@@ -4,6 +4,7 @@ var RealmModel = DS.Model.extend({
     label: DS.attr('string'),
     width: DS.attr('number'),
     height: DS.attr('number'),
+    imageURL: DS.attr('string'),
     places: DS.hasMany('place', {async: true}),
 });
 
@@ -13,15 +14,17 @@ RealmModel.reopenClass({
         {
             id: 1,
             label: 'Realm 1',
-            width: 100,
-            height: 100,
+            width: 931,
+            height: 300,
+            imageURL: '/ignore/chinese-landscape.jpg',
             places: [1,2],
         },
         {
             id: 2,
             label: 'Realm 2',
-            width: 200,
-            height: 200,
+            width: 931,
+            height: 300,
+            imageURL: '/ignore/chinese-landscape.jpg',
             places: [1,2],
         }
     ]

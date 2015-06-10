@@ -1,8 +1,10 @@
-<div style="position: relative; width: {{model.width}}px; height: {{model.height}}px; border: thin solid gray;">
-    <label>{{model.label}}</label>
-    {{#each place in model.places}}
-    <div style="position: absolute; left: {{place.x}}%; top: {{place.y}}%;">
-        <label>{{place.label}}</label>
+<div class="viewport" style="width: 460px; height: 300px; border: thin solid gray; position: relative; overflow-y: hidden; overflow-x: scroll;">
+<div style="position: absolute; left: 0; top: 0; width: {{model.width}}px; height: {{model.height}}px; border: thin solid gray; background-image: url('{{model.imageURL}}'); background-size: cover;">
+        <label>{{model.label}}</label>
+        {{#each place in model.places}}
+        <div style="position: absolute; left: {{place.x}}%; top: {{place.y}}%;">
+            {{#link-to 'place' place}}{{place.label}}{{/link-to}}
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
 </div>
