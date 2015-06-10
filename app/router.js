@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('realm', {path: '/realm/:realm_id'});
+  this.resource('place', {path: '/place/:place_id'});
 });
 
 export default Router;

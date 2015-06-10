@@ -1,3 +1,8 @@
-<div style="width: {{model.width}}px; height: {{model.height}}px; border: thin solid gray;">
+<div style="position: relative; width: {{model.width}}px; height: {{model.height}}px; border: thin solid gray;">
     <label>{{model.label}}</label>
+    {{#each place in model.places}}
+    <div style="position: absolute; left: {{place.x}}%; top: {{place.y}}%;">
+        <label>{{place.label}}</label>
+    </div>
+    {{/each}}
 </div>
