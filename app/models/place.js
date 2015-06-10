@@ -5,7 +5,12 @@ var PlaceModel = DS.Model.extend({
     x: DS.attr('number'),
     y: DS.attr('number'),
     type: DS.attr('string'),
+    jsonData: DS.attr('string'),
     realm: DS.belongsTo('realm'),
+
+    placeData: function() {
+        return JSON.parse(this.get('jsonData'));
+    }.property('jsonData')
 });
 
 PlaceModel.reopenClass({
@@ -15,7 +20,20 @@ PlaceModel.reopenClass({
             label: 'Place 1',
             x: 100,
             y: 200,
-            type: 'place-basic',
+            type: 'place-training',
+            jsonData: JSON.stringify({
+                activities: [
+                    {
+                        label: 'songs'
+                    },
+                    {
+                        label: 'articulation'
+                    },
+                    {
+                        label: 'rhythmic motion'
+                    }
+                ]
+            })
         },
         {
             id: 2,
